@@ -1,0 +1,15 @@
+<!-- Synthetic fixture mimicking the AVA login page (paginaLogin/login.jsf). -->
+<!-- Structure matches the real form: id=formulario, numDoc/pass, submit button, ViewState. -->
+<html>
+  <body>
+    <form id="formulario" name="formulario"
+          action="/avaweb/paginaLogin/login.jsf;jsessionid=FAKE-SESSION-ID.node-1"
+          method="post">
+      <input type="hidden" name="formulario" value="formulario" />
+      <input type="text" name="formulario:numDoc" value="" placeholder="CNPJ ou CPF" />
+      <input type="password" name="formulario:pass" value="" placeholder="Senha" />
+      <input type="submit" name="formulario:j_idt41" value="Entrar" />
+      <input type="hidden" name="javax.faces.ViewState" value="FAKE-VIEWSTATE-TOKEN" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Conta Copel",
+        "description": "Entre com o CPF/CNPJ e a senha da Agência Virtual da Copel (os mesmos do site/app).",
+        "data": {
+          "documento": "CPF ou CNPJ",
+          "password": "Senha"
+        },
+        "data_description": {
+          "documento": "O CPF ou CNPJ usado para acessar a Agência Virtual.",
+          "password": "A senha da Agência Virtual da Copel."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reautenticar Copel",
+        "description": "A Copel rejeitou a senha salva para {documento}. Informe a senha atual.",
+        "data": {
+          "password": "Senha"
+        },
+        "data_description": {
+          "password": "A senha atual da conta."
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigurar Copel",
+        "description": "Atualize as credenciais desta conta. Para usar outra conta, adicione uma nova entrada da integração.",
+        "data": {
+          "documento": "CPF ou CNPJ",
+          "password": "Senha"
+        },
+        "data_description": {
+          "documento": "Deve ser a mesma conta com que esta entrada foi criada.",
+          "password": "A senha atual da conta."
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "CPF/CNPJ ou senha inválidos",
+      "cannot_connect": "Não foi possível acessar a Agência Virtual da Copel",
+      "unknown": "Erro inesperado, verifique os logs"
+    },
+    "abort": {
+      "already_configured": "Esta conta já está configurada",
+      "reauth_successful": "Reautenticação concluída com sucesso",
+      "reconfigure_successful": "Reconfiguração concluída com sucesso",
+      "wrong_account": "O documento pertence a uma conta diferente da configurada"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opções da Copel",
+        "data": {
+          "scan_interval": "Intervalo de atualização"
+        },
+        "data_description": {
+          "scan_interval": "Com que frequência consultar a Agência Virtual, em segundos. Os dados são mensais, então valores altos (horas) são suficientes."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "consumo_atual": { "name": "Consumo do mês" },
+      "consumo_anterior": { "name": "Consumo do mês anterior" },
+      "fatura_valor": { "name": "Valor da fatura" },
+      "fatura_vencimento": { "name": "Vencimento da fatura" },
+      "total_debitos": { "name": "Total de débitos" },
+      "dias_atraso": { "name": "Dias em atraso" }
+    },
+    "binary_sensor": {
+      "fatura_em_atraso": { "name": "Fatura em atraso" }
+    }
+  },
+  "exceptions": {
+    "invalid_auth": {
+      "message": "A Copel rejeitou as credenciais"
+    },
+    "cannot_connect": {
+      "message": "Não foi possível acessar a Agência Virtual da Copel: {error}"
+    },
+    "unexpected_response": {
+      "message": "Resposta inesperada da Agência Virtual da Copel: {error}"
+    }
+  }
+}

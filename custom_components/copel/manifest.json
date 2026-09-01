@@ -1,0 +1,13 @@
+{
+  "domain": "copel",
+  "name": "Copel",
+  "codeowners": ["@henriquekraemer"],
+  "config_flow": true,
+  "documentation": "https://github.com/henriquekraemer/copel-ha",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/henriquekraemer/copel-ha/issues",
+  "loggers": ["custom_components.copel"],
+  "requirements": ["beautifulsoup4>=4.12.0"],
+  "version": "0.1.0"
+}
